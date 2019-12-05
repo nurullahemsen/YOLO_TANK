@@ -1,0 +1,1 @@
+ person 61% Left=0, Top=141, Right=308, Bottom=413
