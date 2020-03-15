@@ -16,7 +16,7 @@ def parseObject(file="deneme.txt"):
         else:
              lineContents.pop()
     f.close()
-    clearFile(file)
+    #clearFile(file)
 
     return lineContents
 
@@ -32,18 +32,18 @@ class FeatureObject:
 
 def mainObject(file):
 	list = parseObject(file)
-	print(list)
+	#print(list)
 
 	personObject = None;
 	confidence = 0;
 	for item in list:
 		obj = FeatureObject(item)
-		if obj.confidence > confidence and obj.type == "car":
+		if obj.confidence > confidence and obj.type == "person":
 			personObject = obj
 			confidence = obj.confidence
 
 	try:
-		# print(personObject.confidence)
+		print(personObject.confidence)
 		return personObject
 	except AttributeError:
 		print("No FeatureObject")

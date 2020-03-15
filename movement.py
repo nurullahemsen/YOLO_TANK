@@ -1,4 +1,4 @@
-from Tools.parser import FeatureObject
+from parser import FeatureObject
 
 
 def move(obj):
