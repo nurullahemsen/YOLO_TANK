@@ -1,5 +1,8 @@
 from parser import FeatureObject
+from time import sleep
+import pigpio
 
+pi = pigpio.pi()
 
 def move(obj):
 	left = obj.left
@@ -22,11 +25,40 @@ def move(obj):
 def moveForward():
 	print("MOVE FORWARD!!!")
 	
+	pi.write(23,1)
+	pi.write(24,0)
+	pi.set_PWM_dutycycle(25, 120)
+	pi.write(17,1)
+	pi.write(27,0)
+	pi.set_PWM_dutycycle(22, 120)
+	sleep(0.5)
+	
+	pi.write(23,0)
+	pi.write(24,0)
+	pi.set_PWM_dutycycle(25, 0)
+	pi.write(17,0)
+	pi.write(27,0)
+	pi.set_PWM_dutycycle(22, 0)
+
 	
 	
 	
 def moveLeft():
 	print("MOVE LEFT!!!")
+	pi.write(23,0)
+	pi.write(24,1)
+	pi.set_PWM_dutycycle(25, 120)
+	pi.write(17,1)
+	pi.write(27,0)
+	pi.set_PWM_dutycycle(22, 120)
+	sleep(0.2)
+	
+	pi.write(23,0)
+	pi.write(24,0)
+	pi.set_PWM_dutycycle(25, 0)
+	pi.write(17,0)
+	pi.write(27,0)
+	pi.set_PWM_dutycycle(22, 0)
 	
 	
 	
@@ -34,3 +66,17 @@ def moveLeft():
 	
 def moveRight():
 	print("MOVE RIGHT!!!")
+	pi.write(23,1)
+	pi.write(24,0)
+	pi.set_PWM_dutycycle(25, 120)
+	pi.write(17,0)
+	pi.write(27,1)
+	pi.set_PWM_dutycycle(22, 120)
+	sleep(0.2)
+	
+	pi.write(23,0)
+	pi.write(24,0)
+	pi.set_PWM_dutycycle(25, 0)
+	pi.write(17,0)
+	pi.write(27,0)
+	pi.set_PWM_dutycycle(22, 0)

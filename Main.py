@@ -24,10 +24,11 @@ def Main():
     child = pexpect.spawnu('bash')
     child.logfile = sys.stdout
     child.sendline("./darknet detect ./cfg/yolov3-tiny.cfg ./yolov3-tiny.weights -thresh 0.15")
-
+    
     while(True):
       child.expect("Enter Image Path")
       child.sendline("frame.jpg")
+      sleep(0.1)
         
       
       try:

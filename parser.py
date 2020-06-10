@@ -16,7 +16,7 @@ def parseObject(file="deneme.txt"):
         else:
              lineContents.pop()
     f.close()
-    #clearFile(file)
+    clearFile(file)
 
     return lineContents
 
